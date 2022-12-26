@@ -4,59 +4,58 @@ void Phonebook::infinte_getline()
 {
     std::string ab;
     int i = 0;
-    while (1)
+    while (std::cin)
     {
-		std::cout << "Enter command: ";
-        getline(std::cin, ab);
-        if (ab == "EXIT")
-            break;
-        else if (ab == "ADD")
-        {
-            std::string tmp = "";
-			std::cout << "Enter first name: ";
-            getline(std::cin, tmp);
-            person[i].set_fname(tmp);
-			std::cout << "Enter last name: ";
-            getline(std::cin, tmp);
-            person[i].set_lname(tmp);
-			std::cout << "Enter phone number: ";
-            getline(std::cin, tmp);
-            person[i].set_phone(tmp);
-			std::cout << "Enter instagram account: ";
-            getline(std::cin, tmp);
-            person[i].set_insta(tmp);
-			std::cout << "Enter your Secret: ";
-            getline(std::cin, tmp);
-            person[i].set_secret(tmp);
-			person[i].filled = true;
-            i++;
-        }
-        else if (ab == "SEARCH")
-        {
-			std::string st;
-			print_table();
-			info_print();
-			std::cout << "Enter 1 to view full user information and Enter 0 if exit"<< std::endl;
-			getline(std::cin, st);
-			if (st == "1")
-				{
-					char *end;
-					std::string st1 = "";
-					std::cout << "Enter index number: ";
-					getline(std::cin, st1);
-					user_info(std::strtol(st1.c_str(),&end,10)-1);
-
-				}
-			else if (st == "0")
+			std::cout << "Enter command: ";
+			getline(std::cin, ab);
+			if (ab == "EXIT")
 				break;
-			else
+			else if (ab == "ADD")
 			{
-				std::cout << "invalid option!!";
-				break;
+				std::string tmp = "";
+				std::cout << "Enter first name: ";
+				getline(std::cin, tmp);
+				person[i].set_fname(tmp);
+				std::cout << "Enter last name: ";
+				getline(std::cin, tmp);
+				person[i].set_lname(tmp);
+				std::cout << "Enter phone number: ";
+				getline(std::cin, tmp);
+				person[i].set_phone(tmp);
+				std::cout << "Enter instagram account: ";
+				getline(std::cin, tmp);
+				person[i].set_insta(tmp);
+				std::cout << "Enter your Secret: ";
+				getline(std::cin, tmp);
+				person[i].set_secret(tmp);
+				person[i].filled = true;
+				i++;
 			}
+			else if (ab == "SEARCH")
+			{
+				std::string st;
+				print_table();
+				info_print();
+				std::cout << "Enter 1 to view full user information and Enter 0 if exit"<< std::endl;
+				getline(std::cin, st);
+				if (st == "1")
+					{
+						char *end;
+						std::string st1 = "";
+						std::cout << "Enter index number: ";
+						getline(std::cin, st1);
+						user_info(std::strtol(st1.c_str(),&end,10)-1);
+
+					}
+				else if (st == "0")
+					break;
+				else
+				{
+					std::cout << "invalid option!!";
+					break;
+				}
+
 		}
-		else
-			exit(1);
     }
 }
 
