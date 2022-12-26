@@ -54,8 +54,9 @@ void Phonebook::infinte_getline()
 				std::cout << "invalid option!!";
 				break;
 			}
-
-        }
+		}
+		else
+			break;
     }
 }
 
