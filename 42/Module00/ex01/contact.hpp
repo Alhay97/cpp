@@ -11,6 +11,7 @@ class Contact
 	public:
 		Contact();
 		~Contact();
+		bool filled; // to check if the index in phonebok is filled return true otherwise false
 
 		//setters
 		void set_fname(std::string fname);

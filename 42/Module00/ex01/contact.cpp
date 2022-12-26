@@ -2,6 +2,7 @@
 #include "contact.hpp"
 
 Contact::Contact(){
+	filled = false;
 }
 Contact::~Contact(){
 }
