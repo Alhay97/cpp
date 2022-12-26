@@ -56,7 +56,7 @@ void Phonebook::infinte_getline()
 			}
 		}
 		else
-			break;
+			exit(1);
     }
 }
 
