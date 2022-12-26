@@ -1,4 +1,3 @@
-
 #include "phonebook.hpp"
 
 void Phonebook::infinte_getline()
@@ -34,19 +33,18 @@ void Phonebook::infinte_getline()
         }
         else if (ab == "SEARCH")
         {
-			std::string st = "";
+			std::string st;
 			print_table();
 			info_print();
 			std::cout << "Enter 1 to view full user information and Enter 0 if exit"<< std::endl;
 			getline(std::cin, st);
 			if (st == "1")
 				{
+					char *end;
 					std::string st1 = "";
 					std::cout << "Enter index number: ";
 					getline(std::cin, st1);
-					user_info(atoi(st1));
-
-
+					user_info(std::strtol(st1.c_str(),&end,10)-1);
 
 				}
 			else if (st == "0")
