@@ -13,20 +13,30 @@ void Phonebook::infinte_getline()
 			else if (ab == "ADD")
 			{
 				std::string tmp = "";
-				std::cout << "Enter first name: ";
-				getline(std::cin, tmp);
+				do{
+					std::cout << "Enter first name: ";
+					getline(std::cin, tmp);
+				}while (tmp.size() < 1);
 				person[i].set_fname(tmp);
-				std::cout << "Enter last name: ";
-				getline(std::cin, tmp);
+				do{
+					std::cout << "Enter last name: ";
+					getline(std::cin, tmp);
+				}while (tmp.size() < 1);
 				person[i].set_lname(tmp);
-				std::cout << "Enter phone number: ";
-				getline(std::cin, tmp);
+				do{
+					std::cout << "Enter phone number: ";
+					getline(std::cin, tmp);
+				}while (tmp.size() < 1);
 				person[i].set_phone(tmp);
-				std::cout << "Enter instagram account: ";
-				getline(std::cin, tmp);
+				do{
+					std::cout << "Enter instagram account: ";
+					getline(std::cin, tmp);
+				}while (tmp.size() < 1);
 				person[i].set_insta(tmp);
-				std::cout << "Enter your Secret: ";
-				getline(std::cin, tmp);
+				do{
+					std::cout << "Enter your Secret: ";
+					getline(std::cin, tmp);
+				}while (tmp.size() < 1);
 				person[i].set_secret(tmp);
 				person[i].filled = true;
 				i++;
@@ -48,11 +58,12 @@ void Phonebook::infinte_getline()
 
 					}
 				else if (st == "0")
-					break;
+					;
+					// break;
 				else
 				{
 					std::cout << "invalid option!!";
-					break;
+					// break;
 				}
 
 		}
