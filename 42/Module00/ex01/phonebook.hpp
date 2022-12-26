@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits.h>
 #include "contact.hpp"
 
 class Phonebook
@@ -9,6 +10,7 @@ class Phonebook
 	public:
 		void infinte_getline(void);
 		void info_print(void);
+		void user_info(int index);
 
 };
 
