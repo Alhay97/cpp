@@ -9,6 +9,11 @@ std::string Zombie::get_name(void)
     return (name);
 }
 
+
+Zombie::Zombie()
+{
+}
+
 Zombie::~Zombie()
 {
     std::cout << "killing Zombie: " << get_name() << std::endl;
@@ -21,4 +26,4 @@ void Zombie::announce()
 
     else
         std::cout << "<" << Zombie::get_name() << ">: BraiiiiiiinnnzzzZ..." << std::endl;
-}    
+}

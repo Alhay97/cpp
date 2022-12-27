@@ -13,6 +13,6 @@ int main()
     std::cout << "Enter Zombie name: ";
     std::cin >> temp;
     randomChump(temp);
-    delete(zo);
+    delete zo;
     return (0);
 }
