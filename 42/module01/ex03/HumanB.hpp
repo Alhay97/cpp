@@ -1,4 +1,7 @@
-##include <iostream>
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
+
+#include <iostream>
 #include "Weapon.hpp"
 
 class HumanB
@@ -7,9 +10,11 @@ class HumanB
         HumanB(std::string temp);
         ~HumanB();
         void attack();
-        void set_attack(Weapon &gun);
+        void setWeapon(Weapon &gun);
 
         private:
         std::string name;
         Weapon*gun;
 };
+
+#endif

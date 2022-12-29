@@ -1,10 +1,10 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(std:string temp, Weapon &equipment)
+HumanA::HumanA(std::string temp, Weapon &wep):gun(wep)
 {
-    this->temp = name;
+    this->name = temp;
 }
-~HumanA::HumanA()
+HumanA::~HumanA()
 {
 }
 void HumanA::attack()

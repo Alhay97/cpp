@@ -1,5 +1,6 @@
 NAME = HARL
-SOURCES = *.cpp \
+SOURCES = Harl.cpp\
+			main.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

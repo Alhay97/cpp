@@ -9,7 +9,7 @@ HumanB::~HumanB()
 {
 }
 
-void HumanB::set_attack(Weapon &gun)
+void HumanB::setWeapon(Weapon &gun)
 {
     this->gun = &gun;
 }
