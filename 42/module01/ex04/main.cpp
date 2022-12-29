@@ -10,34 +10,31 @@ int main (int ac, char **av)
 	std::string newWord = av[3];
 
 	std::string filename = av[1];
-	std::ifstream file(filename);
+	std::ifstream file(filename); //read
 
 	std::string newfilename = filename+".replace";
-	std::ofstream newFile(newfilename);
-	std::string red;
+	std::ofstream newFile(newfilename); //write
+	std::string BUFF;
 
 	size_t pos = 0;
 	size_t old_word_len = old.length();
 	std::string updated;
 
-	while(std::getline(file, red))
+	while(std::getline(file, BUFF))
 	{
-		std::cout << red << std::endl;
-		std::cout << "check: " << ((pos = red.find(old, pos)) != std::string::npos) << std::endl;
-		while ((pos = red.find(old, pos)) != std::string::npos) {
-			updated.append(red, pos, old_word_len);
-			updated.append(newWord);
-			pos += old_word_len;
+		while ((pos = BUFF.find(old)) != BUFF.npos)
+		{
+
+			BUFF.erase(pos,old_word_len);
+			BUFF.insert(pos,newWord);
 		}
-		if (pos != std::string::npos)
-			updated.append(red, pos, std::string::npos);
-		newFile << updated;
+		newFile << BUFF;
+		newFile << "\n";
 	}
 
-	return 0;
-	// std::ifstream openNew(newfilename);
+	file.close();
+	newFile.close();
 
-	// while (std::getline(openNew, red))
-	// 	std::cout << red << std::endl;
+	return 0;
 }
 

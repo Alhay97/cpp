@@ -1,1 +1,9 @@
-FilefiloFilefiloFilefiloFilefiloFilefiloFilefiloFilefilo
+What is the File Descriptor?
+File descriptor is integer that uniquely identifies an open saim of the process.
+
+File Descriptor table: File descriptor table is the collection of integer array indices that are saim descriptors
+in which elements are pointers to saim table entries. One unique saim descriptors table is provided in operating system for each process.
+
+File Table Entry: File table entries is a structure In-memory surrogate for an open saim, which is created when process request to
+opens saim and these entries maintains saim position.
+
