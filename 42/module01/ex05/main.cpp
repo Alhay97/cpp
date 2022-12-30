@@ -9,16 +9,9 @@ int main()
 	std::cout << "Enter complain: ";
 	std::cin >> complain;
 	std::cout << std::endl;
-	if (complain == "DEBUG")
-		harl.complain("DEBUG");
-	else if (complain == "INFO")
-		harl.complain("INFO");
-	else if (complain == "WARNING")
-		harl.complain("WARNING");
-	else if(complain == "DEBUG")
-		harl.complain("complain");
-	else
-		std::cout << "Invalid Arguments";
+	harl.complain(complain);
 
 	return 0;
+
+
 }
