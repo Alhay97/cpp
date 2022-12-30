@@ -25,10 +25,16 @@ void Harl::error( void )
     std::cout << "This is unacceptable! I want to speak to the manager now." <<std::endl;
 }
 
+void Harl::wrong( void )
+{
+	std::cout << "Invalid Complain" <<std::endl;	
+}
+
 void Harl::complain( std::string level )
 {
 	void (Harl::*ptr)(void);
 
+	ptr = &Harl::wrong;
 	(!level.compare("DEBUG") && (ptr = &Harl::debug));
 	(!level.compare("INFO") && (ptr = &Harl::info));
 	(!level.compare("WARNING") && (ptr = &Harl::warning));
