@@ -60,7 +60,8 @@ int Fixed::toInt( void ) const//that converts the fixed-point value to an intege
 
 std::ostream& operator<<(std::ostream& out, Fixed const& fixe)
 {
-	
+	out = fixe.toFloat();
+	return(out);
 }
 
 
