@@ -1,3 +1,6 @@
+# ifndef FIXED_POINT
+# define FIXED_POINT
+
 #include <iostream>
 #include <cmath>
 
@@ -21,3 +24,5 @@ class Fixed
 };
 
 std::ostream& operator<<(std::ostream& out, Fixed const& fixe); //outside the class
+
+#endif

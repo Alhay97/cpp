@@ -1,3 +1,6 @@
+# ifndef FIXED_POINT
+# define FIXED_POINT
+
 #include <iostream>
 
 class Fixed
@@ -13,7 +16,6 @@ class Fixed
 		~Fixed();
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
-
-
-
 };
+
+#endif

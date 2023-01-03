@@ -1,3 +1,6 @@
+# ifndef FIXED_POINT
+# define FIXED_POINT
+
 #include <iostream>
 #include <cmath>
 
@@ -30,7 +33,7 @@ class Fixed
         // post
         Fixed& operator++(void);
         Fixed& operator--(void);
-        //pre 
+        //pre
         Fixed operator++(int);
         Fixed operator--(int);
 
@@ -49,3 +52,5 @@ class Fixed
 };
 
 std::ostream& operator<<(std::ostream& out, Fixed const& fixe); //outside the class
+
+#endif

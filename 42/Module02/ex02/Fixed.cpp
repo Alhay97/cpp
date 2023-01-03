@@ -144,11 +144,11 @@ Fixed& Fixed::operator++(void)
 
 Fixed& Fixed::operator--(void)
 {
-    this->fixd_point++;
+    this->fixd_point--;
     return(*this);
 }
 
-//pre 
+//pre
 Fixed Fixed::operator++(int)
 {
     Fixed temp(*this);
@@ -174,7 +174,7 @@ Fixed& Fixed::max(Fixed& value1, Fixed& value2)
 {
     if (value1 > value2)
         return (value1);
-    return (value2);  
+    return (value2);
 }
 
 const Fixed& Fixed::min(const Fixed& value1, const Fixed& value2)
@@ -189,5 +189,5 @@ const Fixed& Fixed::max(const Fixed& value1, const Fixed& value2)
     if (value1 > value2)
         return (value1);
     else
-        return (value2);  
+        return (value2);
 }
