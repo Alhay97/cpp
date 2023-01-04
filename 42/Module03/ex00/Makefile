@@ -6,7 +6,7 @@ OBJECTS = $(SOURCES:.cpp=.o)
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 CXX = c++
 ${NAME}: $(OBJECTS)
-		$(CXX) $(CXXFLAGS) -o ClapTrap $(OBJECTS)
+		$(CXX) $(CXXFLAGS) $(OBJECTS) -o ClapTrap
 all : ${NAME}
 clean :
 		rm -f ${OBJECTS}

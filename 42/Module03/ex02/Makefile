@@ -1,14 +1,14 @@
 NAME = FragTrap
 SOURCES = ClapTrap.cpp\
 			ScavTrap.cpp\
-			DiamondTrap.cpp\
+			FragTrap.cpp\
 			main.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 CXX = c++
 ${NAME}: $(OBJECTS)
-		$(CXX) $(CXXFLAGS) -o FragTrap $(OBJECTS)
+		$(CXX) $(CXXFLAGS)  $(OBJECTS) -o FragTrap
 all : ${NAME}
 clean :
 		rm -f ${OBJECTS}

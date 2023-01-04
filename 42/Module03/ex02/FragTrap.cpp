@@ -2,13 +2,14 @@
 
 FragTrap::FragTrap()
 {
+	std::cout << "FragTrap constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(const std::string _name)
 {
 	this->setname(_name);
 	this->getname();
-	std::cout << "Constructor has been called" << std::endl;
+	std::cout << "FragTrap Overload constructor called" << std::endl;
 	this->hit_points = 100;
 	this->energy_points = 100;
 	this->attack_damage = 30;
@@ -16,12 +17,12 @@ FragTrap::FragTrap(const std::string _name)
 
 FragTrap::FragTrap(FragTrap& ab)
 {
-	std::cout << "Copy Constructor has been called" << std::endl;
+	std::cout << " FragTrap copy Constructor has been called" << std::endl;
 	*this = ab;
 }
 FragTrap& FragTrap::operator=(FragTrap& ab)
 {
-	std::cout << "copy assigment operator has been called" << std::endl;
+	std::cout << "FragTrap copy assigment operator has been called" << std::endl;
 	this->name = ab.name;
 	this->hit_points = ab.hit_points;
 	this->energy_points = ab.energy_points;
@@ -30,7 +31,7 @@ FragTrap& FragTrap::operator=(FragTrap& ab)
 }
 FragTrap::~FragTrap()
 {
-	std::cout << "Destructor has been called" << std::endl;
+	std::cout << "FragTrap Destructor has been called" << std::endl;
 }
 
 void FragTrap::attack(const std::string& target)

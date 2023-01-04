@@ -2,13 +2,14 @@
 
 ScavTrap::ScavTrap()
 {
+	std::cout << "ScavTrap constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string _name)
 {
 	this->setname(_name);
 	this->getname();
-	std::cout << "Constructor has been called" << std::endl;
+	std::cout << "ScavTrap Overload constructor called" << std::endl;
 	this->hit_points = 100;
 	this->energy_points = 50;
 	this->attack_damage = 20;
@@ -16,12 +17,12 @@ ScavTrap::ScavTrap(const std::string _name)
 
 ScavTrap::ScavTrap(ScavTrap& ab)
 {
-	std::cout << "Copy Constructor has been called" << std::endl;
+	std::cout << "ScavTrap Copy Constructor has been called" << std::endl;
 	*this = ab;
 }
 ScavTrap& ScavTrap::operator=(ScavTrap& ab)
 {
-	std::cout << "copy assigment operator has been called" << std::endl;
+	std::cout << "ScavTrap copy assigment operator has been called" << std::endl;
 	this->name = ab.name;
 	this->hit_points = ab.hit_points;
 	this->energy_points = ab.energy_points;
@@ -30,7 +31,7 @@ ScavTrap& ScavTrap::operator=(ScavTrap& ab)
 }
 ScavTrap::~ScavTrap()
 {
-	std::cout << "Destructor has been called" << std::endl;
+	std::cout << "ScavTrap Destructor has been called" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)

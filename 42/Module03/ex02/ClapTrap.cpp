@@ -3,13 +3,14 @@
 
 ClapTrap::ClapTrap()
 {
+	std::cout << "Default ClapTrap Constructor has been called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string _name)
 {
 	this->setname(_name);
 	this->getname();
-	std::cout << "Constructor has been called" << std::endl;
+	std::cout << "ClapTrap Overload Constructor has been called" << std::endl;
 	this->hit_points = 10;
 	this->energy_points = 10;
 	this->attack_damage = 4;
@@ -31,7 +32,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap& ct)
 }
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor has been called" << std::endl;
+	std::cout << "ClapTrap Destructor has been called" << std::endl;
 }
 
 void ClapTrap::setname(std::string name1)
