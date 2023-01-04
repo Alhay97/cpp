@@ -2,9 +2,7 @@
 # define CLAP_TRAP
 
 #include <iostream>
-/////////////////
-//Inheritance///
-///////////////
+
 class ClapTrap
 {
 	private:
