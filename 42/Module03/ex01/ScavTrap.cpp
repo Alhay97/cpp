@@ -1,5 +1,9 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap()
+{
+}
+
 ScavTrap::ScavTrap(const std::string _name)
 {
 	this->setname(_name);
@@ -39,4 +43,9 @@ void ScavTrap::attack(const std::string& target)
 	}
 	else
 		std::cout << "ScavTrap is low on energy "<< std::endl;
+}
+
+void ScavTrap::guardGate(void)
+{
+	std::cout << "ScavTrap is now in Gate keeper mode." << std::endl;
 }

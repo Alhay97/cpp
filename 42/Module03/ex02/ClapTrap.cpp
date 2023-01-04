@@ -53,7 +53,7 @@ void ClapTrap::attack(const std::string& target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	int hit = amount;
-	while (amount && (this->hit_points >= 0) && (this->energy_points >= 0))
+	while (amount && (this->hit_points <= 0) && (this->energy_points <= 0))
 	{
 		amount--;
 		this->hit_points--;

@@ -1,6 +1,9 @@
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+}
 
 ClapTrap::ClapTrap(std::string _name)
 {
@@ -53,7 +56,7 @@ void ClapTrap::attack(const std::string& target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	int hit = amount;
-	while (amount && (this->hit_points <= 0) && (this->energy_points <= 0))
+	while (amount && (this->hit_points >= 0) && (this->energy_points >= 0))
 	{
 		amount--;
 		this->hit_points--;
@@ -67,7 +70,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	int repaired = amount;
-	while(amount && this->hit_points <= 10)
+	while(amount && this->hit_points >= 10)
 	{
 		this->hit_points++;
 		amount--;

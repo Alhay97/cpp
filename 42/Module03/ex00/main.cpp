@@ -9,12 +9,12 @@ int main(void)
 
 	sir = hammer;
 
-	zero.attack("tree");
+	zero.attack("minion");
 	hammer.attack("car");
 	hand.attack("minion");
 	sir.attack("hulk");
 
-	zero.takeDamage(3);
+	zero.takeDamage(6);
 	zero.beRepaired(1);
 
 	return (0);

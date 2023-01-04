@@ -2,20 +2,14 @@
 
 int main(void)
 {
-	ScavTrap zero("zer0");
-	ScavTrap hammer("sir Hammerlock");
-	ScavTrap hand(zero);
-	ScavTrap sir("");
+	ClapTrap	bb8("BB8");
+	ScavTrap	r2d2("R2D2");
+	ScavTrap	c3p0("C3PO");
+	ScavTrap	bb10(r2d2);
 
-	sir = hammer;
-
-	zero.attack("minion");
-	hammer.attack("car");
-	hand.attack("minion");
-	sir.attack("hulk");
-
-	zero.takeDamage(6);
-	zero.beRepaired(1);
-
+	r2d2.attack("C3PO");
+	c3p0.takeDamage(10);
+	c3p0.beRepaired(5);
+	bb10.guardGate();
 	return (0);
 }
