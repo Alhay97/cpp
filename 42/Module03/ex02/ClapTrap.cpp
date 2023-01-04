@@ -1,6 +1,9 @@
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+}
 
 ClapTrap::ClapTrap(std::string _name)
 {
@@ -53,25 +56,25 @@ void ClapTrap::attack(const std::string& target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	int hit = amount;
-	while (amount && (this->hit_points <= 0) && (this->energy_points <= 0))
+	while (amount && (this->hit_points >= 0) && (this->energy_points >= 0))
 	{
 		amount--;
 		this->hit_points--;
 		this->energy_points--;
 
 	}
-	std::cout << "ClapTrap " << this->name << " takes " << hit << " of damage \n"
+	std::cout << this->name << " takes " << hit << " of damage \n"
 			<< "remaining health: " << this->hit_points << std::endl;
 
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	int repaired = amount;
-	while(amount && this->hit_points <= 10)
+	while(amount && this->hit_points >= 10)
 	{
 		this->hit_points++;
 		amount--;
 	}
-	std::cout << "ClapTrap " << this->name << " is being repaired " << repaired << " to increase its health-> "
+	std::cout << this->name << " is being repaired " << repaired << " to increase its health-> "
 		<< this->hit_points << std::endl;
 }

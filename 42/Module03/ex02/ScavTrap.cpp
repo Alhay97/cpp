@@ -1,25 +1,25 @@
-#include "DiamondTrap.hpp"
+#include "ScavTrap.hpp"
 
-FragTrap::FragTrap()
+ScavTrap::ScavTrap()
 {
 }
 
-FragTrap::FragTrap(const std::string _name)
+ScavTrap::ScavTrap(const std::string _name)
 {
 	this->setname(_name);
 	this->getname();
 	std::cout << "Constructor has been called" << std::endl;
 	this->hit_points = 100;
-	this->energy_points = 100;
-	this->attack_damage = 30;
+	this->energy_points = 50;
+	this->attack_damage = 20;
 }
 
-FragTrap::FragTrap(FragTrap& ab)
+ScavTrap::ScavTrap(ScavTrap& ab)
 {
 	std::cout << "Copy Constructor has been called" << std::endl;
 	*this = ab;
 }
-FragTrap& FragTrap::operator=(FragTrap& ab)
+ScavTrap& ScavTrap::operator=(ScavTrap& ab)
 {
 	std::cout << "copy assigment operator has been called" << std::endl;
 	this->name = ab.name;
@@ -28,24 +28,24 @@ FragTrap& FragTrap::operator=(FragTrap& ab)
 	this->attack_damage = ab.attack_damage;
 	return (*this);
 }
-FragTrap::~FragTrap()
+ScavTrap::~ScavTrap()
 {
 	std::cout << "Destructor has been called" << std::endl;
 }
 
-void FragTrap::attack(const std::string& target)
+void ScavTrap::attack(const std::string& target)
 {
 	if(this->hit_points > 0 && this->energy_points > 0)
 	{
-		std::cout << "FragTrap " << this->getname() << " attacks " << target << ", causing ";
+		std::cout << "ScavTrap " << this->getname() << " attacks " << target << ", causing ";
 		std::cout <<  this->attack_damage << " points of damage!" << std::endl;
 		this->hit_points--;
 	}
 	else
-		std::cout << "FragTrap is low on energy "<< std::endl;
+		std::cout << "ScavTrap is low on energy "<< std::endl;
 }
 
-void FragTrap::highFivesGuys(void)
+void ScavTrap::guardGate(void)
 {
-	std::cout << "FragTrap"<< this->name << "gives a high five to you" << std::endl;
+	std::cout << "ScavTrap is now in Gate keeper mode." << std::endl;
 }

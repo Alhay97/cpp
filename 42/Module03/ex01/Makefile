@@ -1,4 +1,4 @@
-NAME = ClapTrap
+NAME = ScavTrap
 SOURCES = ClapTrap.cpp\
 			ScavTrap.cpp\
 			main.cpp
@@ -7,7 +7,7 @@ OBJECTS = $(SOURCES:.cpp=.o)
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 CXX = c++
 ${NAME}: $(OBJECTS)
-		$(CXX) $(CXXFLAGS) -o ClapTrap $(OBJECTS)
+		$(CXX) $(CXXFLAGS) -o ScavTrap $(OBJECTS)
 all : ${NAME}
 clean :
 		rm -f ${OBJECTS}
