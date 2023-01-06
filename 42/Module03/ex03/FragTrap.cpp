@@ -3,6 +3,9 @@
 FragTrap::FragTrap()
 {
 	std::cout << "FragTrap constructor called" << std::endl;
+	this->hit_points = 100;
+	this->energy_points = 100;
+	this->attack_damage = 30;
 }
 
 FragTrap::FragTrap(const std::string _name)
@@ -10,10 +13,8 @@ FragTrap::FragTrap(const std::string _name)
 	this->setname(_name);
 	this->getname();
 	std::cout << "FragTrap Overload constructor called" << std::endl;
-	this->hit_points = 100;
-	this->energy_points = 100;
-	this->attack_damage = 30;
 }
+
 
 FragTrap::FragTrap(FragTrap& ab)
 {
@@ -44,6 +45,16 @@ void FragTrap::attack(const std::string& target)
 	}
 	else
 		std::cout << "FragTrap is low on energy "<< std::endl;
+}
+
+void FragTrap::sethitpoint(int hit)
+{
+	this->hit_points = hit;
+}
+
+int FragTrap::gethitpoint( void ) const
+{
+	return ( this->hit_points );
 }
 
 void FragTrap::highFivesGuys(void)
