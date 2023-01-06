@@ -6,7 +6,7 @@ SOURCES = ClapTrap.cpp\
 			main.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -Wno-shadow -std=c++98
 CXX = c++
 ${NAME}: $(OBJECTS)
 		$(CXX) $(CXXFLAGS)  $(OBJECTS) -o DiamondTrap

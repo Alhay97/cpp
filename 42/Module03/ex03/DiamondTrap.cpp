@@ -1,14 +1,12 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap() : ClapTrap("Diamond-Default_clap_name"), _name("DaimontDefault")
 {
 	std::cout << "Default DiamondTrap Constructor has been called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const std::string _name)
+DiamondTrap::DiamondTrap(const std::string name2) : ClapTrap(name2 + "_clap_name"), _name(name2)
 {
-	this->setname(_name);
-	this->getname();
 	std::cout << "FragTrap Overload constructor called" << std::endl;
 	this->hit_points = FragTrap::gethitpoint();
 	this->energy_points = this->ScavTrap::energy_points;
@@ -45,6 +43,6 @@ void DiamondTrap::attack(const std::string& target)
 void DiamondTrap::whoAmI()
 {
 	std::cout << "DiamondTrap name: " << this->_name << std::endl;
-	std::cout << "DiamondTrap orginated from ClapTrap: " << ClapTrap::name << std::endl;
+	std::cout << "DiamondTrap orginated from ClapTrap: " << this->getname() << std::endl;
 
 }

@@ -1,12 +1,12 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap():hit_points(10),energy_points(10),attack_damage(4)
+ClapTrap::ClapTrap():name("ClapTrap-00"), hit_points(10),energy_points(10),attack_damage(4)
 {
 	std::cout << "Default ClapTrap Constructor has been called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string _name) : name(_name + "_clap_name")
+ClapTrap::ClapTrap(std::string _name) : name(_name)
 {
 	this->getname();
 	std::cout << "ClapTrap Overload Constructor has been called" << std::endl;
