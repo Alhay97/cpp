@@ -2,9 +2,7 @@ NAME = Animal
 SOURCES = animal.cpp\
 			cat.cpp\
 			dog.cpp\
-			WrongAnimal.cpp\
-			WrongCat.cpp\
-			WrongDog.cpp\
+			brain.cpp\
 			main.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
