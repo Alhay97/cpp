@@ -13,6 +13,6 @@ class Cat : public Animal
 		Cat& operator=(Cat& ab);
 		virtual ~Cat();
 		virtual void makeSound() const;
-		Brain *Cat::getBrain() const;
+		Brain *getBrain() const;
 };
 #endif

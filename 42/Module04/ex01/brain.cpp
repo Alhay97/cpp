@@ -2,12 +2,6 @@
 
 Brain::Brain()
 {
-	int i = 0;
-	while (i < 101)
-	{
-		std::cout << "idea is being generated ->" << std::endl;
-		i++;
-	}
 	std::cout << "Brain Default constructor has been called" << std::endl;
 }
 
@@ -19,7 +13,7 @@ Brain::Brain(Brain& ab)
 Brain& Brain::operator=(Brain& ab)
 {
 	int i = 0;
-	while (i >= 100)
+	while (i < 100)
 	{
 		this->idea[i] = ab.idea[i];
 		i++;
@@ -34,10 +28,7 @@ Brain::~Brain()
 
 void Brain::ideaGeneration(int i, std::string idea)
 {
-	if (i >= 0 && i <= 100)
-		this->idea[100] = idea;
-	else
-		std::cout << "Generation Error.." << std::endl;
+	this->idea[i] = idea;
 
 }
 

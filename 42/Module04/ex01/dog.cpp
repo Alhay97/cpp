@@ -2,8 +2,8 @@
 
 Dog::Dog(): Animal("Dog")
 {
-	this->brain =new Brain();
 	std::cout << "Dog default constructor  is called" << std::endl;
+	this->brain =new Brain();
 }
 
 Dog::Dog(Dog& ab) : Animal()
@@ -16,7 +16,7 @@ Dog& Dog::operator=(Dog & ab)
 {
 	if(this != &ab)
 	{
-		this->~Dog();
+		this->type = ab.type;
 		this->brain = new Brain(*ab.getBrain());
 		this->Animal::operator=(ab);
 	}
@@ -25,8 +25,8 @@ Dog& Dog::operator=(Dog & ab)
 
 Dog::~Dog()
 {
-	std::cout << "Dog destructor is called" << std::endl;
 	delete brain;
+	std::cout << "Dog destructor is called" << std::endl;
 }
 
 void Dog::makeSound() const
