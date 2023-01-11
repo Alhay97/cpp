@@ -2,15 +2,15 @@
 
 void Phonebook::infinte_getline()
 {
-    std::string ab;
+    std::string command;
     int i = 0;
-    while (std::cin)
+    while (1)
     {
 			std::cout << "Enter command: ";
-			getline(std::cin, ab);
-			if (ab == "EXIT")
+			getline(std::cin, command);
+			if (command == "EXIT")
 				break;
-			else if (ab == "ADD")
+			else if (command == "ADD")
 			{
 				std::string tmp = "";
 				do{
@@ -41,7 +41,7 @@ void Phonebook::infinte_getline()
 				person[i].filled = true;
 				i++;
 			}
-			else if (ab == "SEARCH")
+			else if (command == "SEARCH")
 			{
 				std::string st;
 				print_table();
