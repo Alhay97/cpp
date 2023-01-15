@@ -36,12 +36,17 @@ int Bureaucrat::getGrade()
 	return(grade);
 }
 
-void Bureaucrat::incrementGrade++(const int amount)
+std::ostream& operator<<(std::ostream& out, Bureaucrat const& cat)
 {
 
 }
 
-void Bureaucrat::decrementGrade--(const int amount)
+void Bureaucrat::incrementGrade(const int amount)
+{
+
+}
+
+void Bureaucrat::decrementGrade(const int amount)
 {
 
 }
