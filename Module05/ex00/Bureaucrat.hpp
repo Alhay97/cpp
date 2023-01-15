@@ -11,7 +11,7 @@ class Bureaucrat
 
 	public:
 		Bureaucrat();
-		Bureaucrat(const std::string _name,int _grade);
+		Bureaucrat(const std::string &_name,int _grade);
 		Bureaucrat(Bureaucrat& bcat);
 		Bureaucrat& operator=(Bureaucrat& bcat);
 		~Bureaucrat();
@@ -19,13 +19,18 @@ class Bureaucrat
 		int getGrade();
 		class GradeTooHighException : public std::exception
 		{
-			GradeTooHighException();
-			~GradeTooHighException();
+			const char * what () const throw ()
+			{
+				return "grade To High";
+			}
 		};
 		class GradeTooLowException : public std::exception
 		{
-			GradeTooLowException();
-			~GradeTooLowException();
+
+			const char * what () const throw ()
+			{
+				return "grade To Low";
+			}
 		};
 		void incrementGrade(const int amount);
 		void decrementGrade(const int amount);
