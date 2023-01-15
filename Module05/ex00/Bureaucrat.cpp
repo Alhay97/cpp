@@ -5,12 +5,12 @@ Bureaucrat::Bureaucrat() : name("default name")
 	this->grade = 150;
 }
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
 	return(name);
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
 	return(grade);
 }

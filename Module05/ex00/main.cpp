@@ -1,27 +1,38 @@
 #include "Bureaucrat.hpp"
 
 
-double division(int a, int b)
-{
-	if(b==0)
-		throw "Division by zero Condition"; // to declare that the error has occured
-	return(a/b);
-}
-
-
+#include "Bureaucrat.hpp"
 
 int main()
 {
-	int x = 50;
-	int y = 0;
-	double z = 0;
-
-	try {   //checks for errors
-		z = division(x,y);
-		std::cout << z << std::endl;
-	}catch(const char* msg) // handle the error
+	try
 	{
-		std::cerr << msg <<std::endl;
+		Bureaucrat	test1("alhai", 2);
+		std::cout << test1 << std::endl;
+		test1.decrementGrade(1);
+		std::cout << test1 << std::endl;
+		test1.incrementGrade(2);
+		std::cout << test1 << std::endl;
+		test1.decrementGrade(10);
+		std::cout << test1 << std::endl;
 	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat	test4("Tester name", 151);
+		std::cout << test4 << std::endl;
+		test4.incrementGrade(1);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
 	return 0;
 }
+
