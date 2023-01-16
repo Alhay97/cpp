@@ -1,4 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
+
 
 
 ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm",145, 137)
@@ -37,6 +39,26 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor)
 		throw ShrubberyCreationForm::emptyTarget();
 	else if (executor.getGrade() > this->getGradeExec())
 		throw GradeTooLowException();
-	// continue code
+	else{
 
+		std::string name = this ->target;
+		std::ofstream output;
+
+		name = name + "_shrubberry";
+
+		output.open(name.c_str(), std::fstream::trunc | std::fstream::out);
+		if (!output.is_open())
+			std::cout << "error in file creation" << std::endl;
+
+		output << "       _-_" << std::endl;
+		output << "    /~~ @ ~~\\" << std::endl;
+		output << " /~~  $ @ __ ~~\\" << std::endl;
+		output << "{   @ -  $   $  }" << std::endl;
+		output << " \\  _-  @  -_  /" << std::endl;
+		output << "   ~  \\\\ //  ~" << std::endl;
+		output << "_- -   | |    _" << std::endl;
+		output << "   -_  | |   -_" << std::endl;
+		output << "      // \\\\" << std::endl;
+		output.close();
+	}
 }
