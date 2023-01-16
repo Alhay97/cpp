@@ -8,8 +8,12 @@ Form::Form(const std::string &_name,bool _signature,int _grade_sign,int _grade_e
 																						grade_exec(_grade_exec),
 																						grade_sign(_grade_sign)
 {
-	if()
-
+	if (grade_exec > 0 && grade_sign > 0 && grade_exec < 151 && grade_sign < 151)
+		std::cout << "Form " << this->name << " with signing grade " << this->grade_sign << std:: endl;
+	else if(grade_exec < 1 | grade_sign < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if( grade_exec > 150| grade_sign > 150)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 Form::Form(Form& form)
@@ -19,7 +23,9 @@ Form::Form(Form& form)
 
 Form& Form::operator=(Form& form)
 {
-
+	if (this != &form)
+		this->signature =form.signature;
+	return ;
 }
 
 Form::~Form()
