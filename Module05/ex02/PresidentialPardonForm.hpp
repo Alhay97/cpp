@@ -16,6 +16,14 @@ class PresidentialPardonForm : public AForm
 		~PresidentialPardonForm();
 		std::string GetTarget();
 		virtual void execute(Bureaucrat const & executor);
+		struct emptyTarget : std::exception
+		{
+			const char* who() const throw()
+			{
+				return "there is no target available";
+			}
+		};
+
 };
 
 #endif

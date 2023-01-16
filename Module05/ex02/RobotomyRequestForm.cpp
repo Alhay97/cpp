@@ -28,4 +28,19 @@ std::string RobotomyRequestForm::GetTarget()
 	return (this->target);
 }
 
+void RobotomyRequestForm::execute(Bureaucrat const & executor)
+{
+	if(this->target.empty())
+		throw RobotomyRequestForm::emptyTarget();
+	else if(executor.getGrade() > this->getGradeExec())
+		throw GradeTooLowException();
+	std::cout << "zzzzzzzzzzzzzzzzzzzzzz"<<std::endl;
+	std::cout << "(Drill Sound"<< std::endl;
 
+	if(rand() % 2 == 1)
+		std::cout << this->target << " has robotomized successfully 50\% of the time." << std::endl;
+	else
+		std::cout << this->target << " has not robotomized successfully 50\% of the time." << std::endl;
+
+
+}

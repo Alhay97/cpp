@@ -18,6 +18,13 @@ class Bureaucrat;
 		ShrubberyCreationForm& operator=(ShrubberyCreationForm& shrub);
 		~ShrubberyCreationForm();
 		std::string getTarget();
+		struct emptyTarget : std::exception
+		{
+			const char* who() const throw()
+			{
+				return "there is no target available";
+			}
+		};
 		virtual void execute(Bureaucrat const & executor);
 };
 

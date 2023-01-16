@@ -33,4 +33,10 @@ std::string ShrubberyCreationForm::getTarget()
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor)
 {
+	if (this->target.empty())
+		throw ShrubberyCreationForm::emptyTarget();
+	else if (executor.getGrade() > this->getGradeExec())
+		throw GradeTooLowException();
+	// continue code
+
 }

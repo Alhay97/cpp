@@ -17,6 +17,13 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm& operator=(RobotomyRequestForm& robo);
 		~RobotomyRequestForm();
 		std::string GetTarget();
+		struct emptyTarget : std::exception
+		{
+			const char* who() const throw()
+			{
+				return "there is no target available";
+			}
+		};
 		virtual void execute(Bureaucrat const & executor);
 
 };
