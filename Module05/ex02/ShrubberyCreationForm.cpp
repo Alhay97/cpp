@@ -1,23 +1,36 @@
 #include "ShrubberyCreationForm.hpp"
 
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm",145, 137)
 {
+	this->target = "Default target";
+}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string &_target) : AForm("ShrubberyCreationForm",145, 137)
+{
+	this->target = _target;
+}
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& shrub) :  AForm("ShrubberyCreationForm",145, 137)
+{
+	this->target = shrub.getTarget();
 
 }
-ShrubberyCreationForm::ShrubberyCreationForm(/*add arg*/)
-{
 
-}
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& shrub)
-{
-
-}
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm& shrub)
 {
-
+	this->target = shrub.getTarget();
+	return (*this);
 }
+
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 
 }
+
+std::string ShrubberyCreationForm::getTarget()
+{
+	return (this->target);
+}
+
+// void ShrubberyCreationForm::execute(Bureaucrat const & executor)
+// {
+// }
