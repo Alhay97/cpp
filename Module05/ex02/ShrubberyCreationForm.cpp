@@ -31,6 +31,6 @@ std::string ShrubberyCreationForm::getTarget()
 	return (this->target);
 }
 
-// void ShrubberyCreationForm::execute(Bureaucrat const & executor)
-// {
-// }
+void ShrubberyCreationForm::execute(Bureaucrat const & executor)
+{
+}
