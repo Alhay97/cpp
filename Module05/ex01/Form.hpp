@@ -13,12 +13,14 @@ class Form
 
 	public:
 		Form();
-		Form(const std::string &_name,bool _signature);
+		Form(const std::string &_name,bool _signature,int _grade_sign,int _grade_exec);
 		Form(Form& form);
 		Form& operator=(Form& form);
 		~Form();
 		std::string getName() const;
 		bool getSignature() const;
+		int getGradeSign( ) const;
+		int getGradeExec() const;
 };
 
 #endif
