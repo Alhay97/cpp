@@ -17,10 +17,29 @@ class Form
 		Form(Form& form);
 		Form& operator=(Form& form);
 		~Form();
+
 		std::string getName() const;
 		bool getSignature() const;
 		int getGradeSign( ) const;
 		int getGradeExec() const;
+
+		void beSigned(Bureaucrat &cat);
+
+		class GradeTooHighException : public std::exception
+		{
+			const char * what () const throw ()
+			{
+				return "[Form] Grade To High";
+			}
+		};
+		class GradeTooLowException : public std::exception
+		{
+
+			const char * what () const throw ()
+			{
+				return "[Form] Grade To Low";
+			}
+		};
 };
 
 #endif
