@@ -13,7 +13,7 @@ class Form
 
 	public:
 		Form();
-		Form(const std::string &_name,bool _signature,int _grade_sign,int _grade_exec);
+		Form(const std::string &_name,int _grade_sign,int _grade_exec);
 		Form(Form& form);
 		Form& operator=(Form& form);
 		~Form();
@@ -41,5 +41,7 @@ class Form
 			}
 		};
 };
+
+std::ostream& operator<<(std::ostream& out, Form const& form);
 
 #endif

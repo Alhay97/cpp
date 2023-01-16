@@ -1,38 +1,26 @@
 #include "Bureaucrat.hpp"
 
 
-#include "Bureaucrat.hpp"
-
 int main()
 {
-	try
 	{
-		Bureaucrat	test1("alhai", 2);
-		std::cout << test1 << std::endl;
-		test1.decrementGrade(1);
-		std::cout << test1 << std::endl;
-		test1.incrementGrade(2);
-		std::cout << test1 << std::endl;
-		test1.decrementGrade(10);
-		std::cout << test1 << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+
 	std::cout << std::endl;
-
-	try
+	std::cout << "#-------------------[1]------------------------#" << std::endl;
 	{
-		Bureaucrat	test4("Tester name", 151);
-		std::cout << test4 << std::endl;
-		test4.incrementGrade(1);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
+		Bureaucrat bureaucrat("Finn", 44);
+		Form form("Form_1", 43, 12);
+		bureaucrat.signForm(form);
+		std::cout << form << std::endl;
 	}
 
-	return 0;
+	std::cout << std::endl;
+	std::cout << "#-------------------[2]------------------------#" << std::endl;
+	{
+		Bureaucrat bureaucrat("Finn", 44);
+		Form form("Form_2", 46, 12);
+		bureaucrat.signForm(form);
+		std::cout << form << std::endl;
+	}
 }
 

@@ -1,9 +1,11 @@
 #include "Form.hpp"
+
 Form::Form() : name ("default name"), grade_exec(0), grade_sign(0)
 {
 	this->signature = false;
 	return ;
 }
+
 Form::Form(const std::string &_name,int _grade_sign,int _grade_exec) : name(_name),
 																		grade_exec(_grade_exec),
 																		grade_sign(_grade_sign)
@@ -67,4 +69,13 @@ int Form::getGradeSign( ) const
 int Form::getGradeExec() const
 {
 	return(this->grade_exec);
+}
+
+std::ostream& operator<<(std::ostream& outs, const Form &src)
+{
+	outs <<"[Form] name: " << src.getName() << std::endl;
+	outs << "[Form] sign grade: " << src.getSignature() << std::endl;
+	outs << "[Form] exec grade: " << src.getGradeExec() << std::endl;
+	outs<< "[Form] sign status: " << src.getSignature();
+    return outs;
 }
