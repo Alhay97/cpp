@@ -1,14 +1,14 @@
 #include "Form.hpp"
 
-Form::Form() : name ("default name"), grade_exec(0), grade_sign(0)
+Form::Form() : name ("default name"), grade_sign(0), grade_exec(0)
 {
 	this->signature = false;
 	return ;
 }
 
-Form::Form(const std::string &_name,int _grade_sign,int _grade_exec) : name(_name),
-																		grade_exec(_grade_exec),
-																		grade_sign(_grade_sign)
+Form::Form(const std::string &_name,int _grade_sign,int _grade_exec) : name(_name),grade_sign(_grade_sign),
+																		grade_exec(_grade_exec)
+																		
 {
 	if (grade_exec > 0 && grade_sign > 0 && grade_exec < 151 && grade_sign < 151)
 		std::cout << "Form " << this->name << " with signing grade " << this->grade_sign << std:: endl;
@@ -18,8 +18,9 @@ Form::Form(const std::string &_name,int _grade_sign,int _grade_exec) : name(_nam
 		throw Form::GradeTooLowException();
 }
 
-Form::Form(Form& form) : name(form.name), grade_exec(form.grade_exec),
-						grade_sign(form.grade_sign)
+Form::Form(Form& form) : name(form.name), grade_sign(form.grade_sign),
+							grade_exec(form.grade_exec)
+						
 {
 	this->signature = false;
 	return ;
