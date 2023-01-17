@@ -52,22 +52,22 @@ AForm::~AForm()
 	return ;
 }
 
-std::string AForm::getName() const
+std::string const &AForm::getName() const
 {
 	return(this->name);
 }
 
-bool AForm::getSignature() const
+bool const &AForm::getSignature() const
 {
 	return(this->signature);
 }
 
-int AForm::getGradeSign( ) const
+int const &AForm::getGradeSign( ) const
 {
 	return (this->grade_sign);
 }
 
-int AForm::getGradeExec() const
+int const &AForm::getGradeExec() const
 {
 	return(this->grade_exec);
 }

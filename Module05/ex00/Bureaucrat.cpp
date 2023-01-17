@@ -5,15 +5,7 @@ Bureaucrat::Bureaucrat() : name("default name")
 	this->grade = 150;
 }
 
-std::string Bureaucrat::getName() const
-{
-	return(name);
-}
 
-int Bureaucrat::getGrade() const
-{
-	return(grade);
-}
 
 Bureaucrat::Bureaucrat(const std::string &_name,int _grade) : name(_name),
 															grade(_grade)
@@ -41,6 +33,15 @@ Bureaucrat::~Bureaucrat()
 
 }
 
+std::string const  &Bureaucrat::getName() const
+{
+	return(name);
+}
+
+int const &Bureaucrat::getGrade() const
+{
+	return(grade);
+}
 
 void Bureaucrat::incrementGrade(const int amount)
 {
@@ -66,4 +67,14 @@ std::ostream& operator<<(std::ostream& out, Bureaucrat const &bur)
 {
 	out << bur.getName() << ", bureaucrat grade " << bur.getGrade();
     return out;
+}
+
+const char * Bureaucrat::GradeTooLowException::what () const throw ()
+{
+	return "grade To Low";
+}
+
+const char * Bureaucrat::GradeTooHighException::what () const throw ()
+{
+	return "grade To High";
 }

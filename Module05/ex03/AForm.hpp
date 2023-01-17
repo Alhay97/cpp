@@ -19,10 +19,10 @@ class AForm
 
 		virtual ~AForm();
 
-		std::string getName() const;
-		bool getSignature() const;
-		int getGradeSign( ) const;
-		int getGradeExec() const;
+		std::string const &getName() const;
+		bool const &getSignature() const;
+		int const &getGradeSign( ) const;
+		int const &getGradeExec() const;
 
 		void beSigned(Bureaucrat &cat);
 

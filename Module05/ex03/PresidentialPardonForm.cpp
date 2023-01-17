@@ -5,6 +5,11 @@ PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm
 	this->target = "Default target";
 }
 
+const char* PresidentialPardonForm::emptyTarget::what() const throw()
+{
+	return "there is no target available";
+}
+
 PresidentialPardonForm::PresidentialPardonForm(const std::string &_target) : AForm("PresidentialPardonForm",25,5)
 {
 	this->target = _target;
@@ -26,12 +31,12 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	return ;
 }
 
-std::string PresidentialPardonForm::GetTarget()
+std::string const &PresidentialPardonForm::GetTarget()
 {
 	return (this->target);
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const & executor) const 
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	if(this->target.empty())
 		throw PresidentialPardonForm::emptyTarget();

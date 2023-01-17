@@ -18,23 +18,23 @@ class Bureaucrat
 		Bureaucrat(Bureaucrat& bcat);
 		Bureaucrat& operator=(Bureaucrat& bcat);
 		~Bureaucrat();
-		std::string getName() const;
-		int getGrade() const;
+
+
+		std::string const &getName() const;
+		int const &getGrade() const;
+
+
 		class GradeTooHighException : public std::exception
 		{
-			const char * what () const throw ()
-			{
-				return "grade To High";
-			}
+			const char * what () const throw ();
 		};
+
 		class GradeTooLowException : public std::exception
 		{
 
-			const char * what () const throw ()
-			{
-				return "grade To Low";
-			}
+			const char * what () const throw ();
 		};
+
 		void incrementGrade(const int amount);
 		void decrementGrade(const int amount);
 		void signForm(Form &form);

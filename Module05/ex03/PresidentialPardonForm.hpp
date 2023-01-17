@@ -15,14 +15,11 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm& operator=( PresidentialPardonForm& president);
 		~PresidentialPardonForm();
 
-		std::string GetTarget();
+		std::string const &GetTarget();
 		virtual void execute(Bureaucrat const & executor) const;
 		struct emptyTarget : std::exception
 		{
-			const char* who() const throw()
-			{
-				return "there is no target available";
-			}
+			const char* what() const throw();
 		};
 
 };

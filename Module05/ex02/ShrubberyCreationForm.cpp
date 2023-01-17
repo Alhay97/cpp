@@ -6,17 +6,17 @@
 ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm",145, 137)
 {
 	this->target = "Default target";
-	return ; 
+	return ;
 }
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &_target) : AForm("ShrubberyCreationForm",145, 137)
 {
 	this->target = _target;
-	return ; 
+	return ;
 }
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& shrub) :  AForm("ShrubberyCreationForm",145, 137)
 {
 	this->target = shrub.getTarget();
-	return ; 
+	return ;
 
 }
 
@@ -28,13 +28,19 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm& s
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	return ; 
+	return ;
 }
 
-std::string ShrubberyCreationForm::getTarget()
+std::string const &ShrubberyCreationForm::getTarget()
 {
 	return (this->target);
 }
+
+const char* ShrubberyCreationForm::emptyTarget::what() const throw()
+{
+	return "there is no target available";
+}
+
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {

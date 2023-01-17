@@ -20,8 +20,8 @@ class Bureaucrat
 		Bureaucrat& operator=(Bureaucrat& bcat);
 		~Bureaucrat();
 
-		std::string getName() const;
-		int getGrade() const;
+		std::string const &getName() const;
+		int const &getGrade() const;
 
 		void signForm(AForm &form);
 		void executeForm(AForm &form) const;

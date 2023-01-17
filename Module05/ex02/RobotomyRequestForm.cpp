@@ -4,17 +4,17 @@
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm",72, 45)
 {
 	this->target = "Default target";
-	return ; 
+	return ;
 }
 RobotomyRequestForm::RobotomyRequestForm(const std::string &_target) : AForm("RobotomyRequestForm",72, 45)
 {
 	this->target = _target;
-	return ; 
+	return ;
 }
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm& robo) : AForm("RobotomyRequestForm",72, 45)
 {
 	this->target = robo.GetTarget();
-	return ; 
+	return ;
 }
 RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm& robo)
 {
@@ -23,15 +23,20 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm& robo)
 }
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	return ; 
+	return ;
 }
 
-std::string RobotomyRequestForm::GetTarget()
+std::string const &RobotomyRequestForm::GetTarget()
 {
 	return (this->target);
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const & executor) const 
+const char* RobotomyRequestForm::emptyTarget::what() const throw()
+{
+	return "there is no target available";
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	if(this->target.empty())
 		throw RobotomyRequestForm::emptyTarget();
@@ -47,3 +52,5 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 
 
 }
+
+

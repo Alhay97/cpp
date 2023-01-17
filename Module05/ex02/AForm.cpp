@@ -52,25 +52,36 @@ AForm::~AForm()
 	return ;
 }
 
-std::string AForm::getName() const
+std::string const &AForm::getName() const
 {
 	return(this->name);
 }
 
-bool AForm::getSignature() const
+bool const &AForm::getSignature() const
 {
 	return(this->signature);
 }
 
-int AForm::getGradeSign( ) const
+int const &AForm::getGradeSign( ) const
 {
 	return (this->grade_sign);
 }
 
-int AForm::getGradeExec() const
+int const &AForm::getGradeExec() const
 {
 	return(this->grade_exec);
 }
+
+const char * AForm::GradeTooLowException::what () const throw ()
+{
+	return "grade To Low";
+}
+
+const char * AForm::GradeTooHighException::what () const throw ()
+{
+	return "grade To High";
+}
+
 
 std::ostream& operator<<(std::ostream& outs, const AForm &src)
 {

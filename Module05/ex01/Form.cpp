@@ -8,7 +8,7 @@ Form::Form() : name ("default name"), grade_sign(0), grade_exec(0)
 
 Form::Form(const std::string &_name,int _grade_sign,int _grade_exec) : name(_name),grade_sign(_grade_sign),
 																		grade_exec(_grade_exec)
-																		
+
 {
 	if (grade_exec > 0 && grade_sign > 0 && grade_exec < 151 && grade_sign < 151)
 		std::cout << "Form " << this->name << " with signing grade " << this->grade_sign << std:: endl;
@@ -20,7 +20,7 @@ Form::Form(const std::string &_name,int _grade_sign,int _grade_exec) : name(_nam
 
 Form::Form(Form& form) : name(form.name), grade_sign(form.grade_sign),
 							grade_exec(form.grade_exec)
-						
+
 {
 	this->signature = false;
 	return ;
@@ -52,25 +52,36 @@ Form::~Form()
 	return ;
 }
 
-std::string Form::getName() const
+std::string const &Form::getName() const
 {
 	return(this->name);
 }
 
-bool Form::getSignature() const
+bool const &Form::getSignature() const
 {
 	return(this->signature);
 }
 
-int Form::getGradeSign( ) const
+int const &Form::getGradeSign( ) const
 {
 	return (this->grade_sign);
 }
 
-int Form::getGradeExec() const
+int const &Form::getGradeExec() const
 {
 	return(this->grade_exec);
 }
+
+const char * Form::GradeTooLowException::what () const throw ()
+{
+	return "grade To Low";
+}
+
+const char * Form::GradeTooHighException::what () const throw ()
+{
+	return "grade To High";
+}
+
 
 std::ostream& operator<<(std::ostream& outs, const Form &src)
 {

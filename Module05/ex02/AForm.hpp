@@ -19,10 +19,10 @@ class AForm
 
 		virtual ~AForm();
 
-		std::string getName() const;
-		bool getSignature() const;
-		int getGradeSign( ) const;
-		int getGradeExec() const;
+		std::string const &getName() const;
+		bool const &getSignature() const;
+		int const &getGradeSign( ) const;
+		int const &getGradeExec() const;
 
 		void beSigned(Bureaucrat &cat);
 
@@ -31,19 +31,13 @@ class AForm
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				const char * what () const throw ()
-				{
-					return "grade To High";
-				}
+				const char * what () const throw ();
 
 		};
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				const char * what () const throw ()
-				{
-					return "grade To Low";
-				}
+				const char * what () const throw ();
 		};
 };
 
