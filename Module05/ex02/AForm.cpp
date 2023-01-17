@@ -44,6 +44,8 @@ void AForm::beSigned(Bureaucrat &cat)
 		this->signature = true;
 		std::cout << "the AForm signed successfully" << std::endl;
 	}
+	else
+		throw AForm::GradeTooLowException();
 }
 
 AForm::~AForm()
