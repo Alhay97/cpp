@@ -28,7 +28,7 @@ class RobotomyRequestForm : public AForm
 				return "there is no target available";
 			}
 		};
-		
+
 
 };
 
