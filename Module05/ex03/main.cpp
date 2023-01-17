@@ -15,17 +15,17 @@ int	main(void)
 		delete form;
 	std::cout << std::endl;
 	std::cout << std::endl;
-	form = intern.makeForm("presidential pardon", "Maynard");
+	form = intern.makeForm("presidential", "Maynard");
 	if (form)
 		delete form;
 	std::cout << std::endl;
 	std::cout << std::endl;
-	form = intern.makeForm("shrubbery creation", "Danny");
+	form = intern.makeForm("shrubbery", "Danny");
 	if (form)
 		delete form;
 	std::cout << std::endl;
 	std::cout << std::endl;
-	form = intern.makeForm("robotomy request", "Adam");
+	form = intern.makeForm("robotomy", "Adam");
 	form->beSigned(paul);
 	form->execute(paul);
 	if (form)
