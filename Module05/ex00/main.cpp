@@ -25,14 +25,14 @@ int main()
 	try
 	{
 		Bureaucrat	test4("Tester name", 151);
+		test4.incrementGrade(2);
 		std::cout << test4 << std::endl;
+		Bureaucrat	test5("Tester name", 0);
+		std::cout << test5 << std::endl;
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
-		Bureaucrat	test4("Tester name", 1);
-		test4.incrementGrade(2);
-		std::cout << test4 << std::endl;
 	}
 
 	return 0;
