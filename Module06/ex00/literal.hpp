@@ -2,16 +2,20 @@
 #define LITERAL_HPP
 
 #include "iostream"
+#include <cmath>
+#include <cstring>
+#include <limits>
+#include <exception>
 
 class Literals
 {
     private:
         std::string storage;
-        char chare;
         char *arg;
+        char chare;
         int num_int;
-        double num_double;
         float num_float;
+        double num_double;
 
     public:
         Literals();
@@ -25,6 +29,7 @@ class Literals
         void printToInt();
         void printToFloat();
         void printToDouble();
+        void printter();
 };
 
 #endif
