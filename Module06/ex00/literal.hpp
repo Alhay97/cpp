@@ -25,11 +25,12 @@ class Literals
         ~Literals();
 
         void converter();
-        void printToChar();
-        void printToInt();
-        void printToFloat();
-        void printToDouble();
-        void printter();
+        void printToChar() const;
+        void printToInt() const;
+        void printToFloat() const;
+        void printToDouble() const;
+        bool is_number(void) const;
+        void printter() const;
 };
 
 #endif
