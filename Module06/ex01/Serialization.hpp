@@ -1,13 +1,16 @@
 #ifndef SERIALIZATION_HPP
 #define SERIALIZATION_HPP
 
-typedef struct Data
-{
-	std::string data
-};
+#include <iostream>
+#include <string>
 
-uintptr_t serialize(Data* ptr);
+typedef struct s_data
+{
+	std::string info;
+} Data;
 
 Data* deserialize(uintptr_t raw);
+
+uintptr_t serialize(Data* ptr);
 
 #endif
