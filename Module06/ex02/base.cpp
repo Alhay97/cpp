@@ -1,61 +1,43 @@
 #include  "base.hpp"
 
-
 /*
-an enumeration called RandomType is defined with three enumerators: A, B, and C. These correspond to the 
 
-classes of the same name that are also defined in the code.
+The code defines a function generate() which returns a pointer to an object of type Base, which is a base class.
 
-The srand() function is used to seed the random number generator with the current time. This ensures that the sequence 
+ The function uses an enumeration RandomType with three enumerators: A, B, and C. It initializes the random number generator with the current time,
 
-of random numbers generated will be 
+ and uses the rand() function to generate a random number between 0 and 2 (inclusive).
 
-different each time the program is run.
+Based on the generated random number, the function assigns the corresponding enumerator value to the variable randomType.
 
-The rand() function is then used to generate a random number between 0 and 2 (inclusive). The result is casted to 
+Then, it uses an if-else statement to check the value of randomType and return a new object of the corresponding derived class: A, B, or C.
 
-RandomType and stored in the variable randomType.
+The new operator creates a new object and returns a pointer to the object, which is then returned by the function.
 
-Next, an if-else statement is used to check the value of randomType and return a new object of the corresponding class.
+This function allows for a random object of a derived class to be generated and returned at runtime, making the code more dynamic.
 
-The first if statement checks if the value of randomType is equal to RandomType::A. If it is, a new object of class A is returned.
-
-The second if statement checks if the value of randomType is equal to RandomType::B. If it is, a new object of class B is returned.
-
-Finally, the else statement executes if the value of randomType is equal to RandomType::C. A new object of class C is returned.
-
-As you can see, this way of implementing allows you to have better readability and maintainability since it is explicit what are the 
-
-possible values of randomType, and you won't have to worry about unexpected values.
 */
 
-Base *generate(void)
+Base* generate(void)
 {
-    enum class RandomType
-    {
-        A,
-        B,
-        C
-    };
-
-    RandomType randomType;
+    int randomType;
     srand(time(NULL));
-    randomType = static_cast<RandomType>(rand() % 3);
-    if (randomType == RandomType::A)
-        return new A;
-    else if (randomType == RandomType::B)
-        return new B;
+    randomType = rand() % 3;
+    if (randomType == 1)
+        return (new A);
+    else if (randomType == 2)
+        return (new B);
     else
-        return new C;
+        return (new C);
 }
 
 void identify(Base* p)
 {
     A *a;
-    if ((a = dynamic_cast<A *>(p)) != NULL) 
+    if ((a = dynamic_cast<A *>(p)) != NULL)
         std::cout << "A" <<std::endl;
     B *b;
-    if ((b = dynamic_cast<A *>(p)) != NULL)
+    if ((b = dynamic_cast<B *>(p)) != NULL)
         std::cout << "B" << std::endl;
     C *c;
     if ((c = dynamic_cast<C *>(p)) != NULL)
@@ -66,6 +48,7 @@ void identify(Base& p)
 {
     try{
         A& a = dynamic_cast<A &> (p);
+        (void)a;
         std::cout << "A" << std::endl;
     }catch(const std::exception& e)
     {
@@ -74,6 +57,7 @@ void identify(Base& p)
 
     try{
         B& b = dynamic_cast<B &> (p);
+        (void)b;
         std::cout << "B" << std::endl;
     }catch(const std::exception& e)
     {
@@ -81,10 +65,10 @@ void identify(Base& p)
     }
      try{
         C& c = dynamic_cast<C &> (p);
+        (void)c;
         std::cout << "C" << std::endl;
     }catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
 }
-

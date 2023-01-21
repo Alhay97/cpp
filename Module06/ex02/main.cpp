@@ -1,10 +1,11 @@
 #include "base.hpp"
-#include "class.hpp"
 
 int main(void)
 {
+	srand(time(NULL));
 	Base*	p;
-	p->generate();
-	p->identify(p);
-	p->identify(*p);
+	p = generate();
+	identify(p);
+	identify(*p);
+    return (0);
 }
