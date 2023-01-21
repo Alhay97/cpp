@@ -8,7 +8,7 @@ class A : public Base
     A();
     A(const A &a_copy)
     A operator=(const A &a_source);
-    virtual ~A();
+    ~A();
 };
 
 class B : public Base
