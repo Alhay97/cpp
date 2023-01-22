@@ -10,27 +10,27 @@ template <class T> class Array
 		int Tsize;
 
 	public:
-		Array()
+		Array<T>()
 		{
 			this->array = NULL;
 			this->Tsize = 0;
 		}
 
-		Array(unsigned int _size)
+		Array<T>(unsigned int _size)
 		{
 			this-> Tsize = _size;
-			this-> array = new T[_size];
+			this-> array = new T[Tsize];
 		}
 
-		Array (Array &copy)
+		Array<T>(const Array<T> &copy)
 		{
 			*this = copy;
 		}
 
-		Array operator=(Array &source)
+		Array<T> &operator=(const Array<T> &source)
 		{
-			this->Tsize = source.size();
-			this->array = new T[this->_size];
+			this->Tsize = source.Size();
+			this->array = new T[this->Tsize];
 			int i = 0;
 			while( i < this->Tsize)
 			{
@@ -40,14 +40,14 @@ template <class T> class Array
 			return *this;
 		}
 
-		Array &operator [] (const int i ) const
+		T &operator[](const int i ) const
 		{
 			if (i >= this->Tsize || i < 0)
 				throw std::overflow_error("index is out of bounds");
 			return this->array[i];
 		}
 
-		~Array()
+		~Array<T>()
 		{
 			if(this->Tsize > 0)
 				delete [] this->array;
