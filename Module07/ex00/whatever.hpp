@@ -5,7 +5,7 @@
 
 template <typename T> void alswap(T &num1, T &num2)
 {
-	T temp = 0;
+	T temp;
 
 	temp = num1;
 	num1 = num2;
