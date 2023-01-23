@@ -12,7 +12,7 @@ int main(int counter, char **var)
 			for (int j = 0; j < k ; j++)
 			{
 				if (islower(var[i][j]) != 0)
-					std::cout << (char)toupper(var[i][j]);
+					std::cout << (is)toupper(var[i][j]);
 				else
 					std::cout << var[i][j];
 			}

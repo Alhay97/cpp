@@ -3,7 +3,7 @@ NAME = SPAN
 CPP = c++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SOURCE = main.cpp Span.cpp
+SOURCE = Span.cpp main.cpp 
 
 OBJ = $(SOURCE:%.cpp=%.o)
 
