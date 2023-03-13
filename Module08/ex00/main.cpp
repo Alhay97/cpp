@@ -31,3 +31,32 @@ int main()
 	}
 	return (0);
 }
+
+
+// int	main()
+// {
+// 	std::vector<int>			vect;
+// 	std::vector<int>::iterator	it;
+
+// 	for (int i = 0; i < 10; i+=2)
+// 		vect.push_back(i);
+// 	try
+// 	{
+// 		it = easyfind(vect, 4);
+// 		std::cout << "iterator: " << *it << std::endl;
+// 	}
+// 	catch(const std::exception& e)
+// 	{
+// 		std::cerr << e.what() << '\n';
+// 	}
+
+// 	try
+// 	{
+// 		it = easyfind(vect, 20);
+// 		std::cout << "iterator: " << *it << std::endl;
+// 	}
+// 	catch(const std::exception& e)
+// 	{
+// 		std::cerr << e.what() << '\n';
+// 	}
+// }

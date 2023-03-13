@@ -2,16 +2,17 @@
 #define SPAN_HPP
 
 # include <iostream>
-# include <vector>
 # include <exception>
+# include <cstdlib>
+# include <time.h>
+# include <vector>
 # include <algorithm>
-# include <stdexcept>
 
-class Span 
+class Span
 {
     private:
         std::vector<int> vect;
-        unsigned int leng; 
+        unsigned int leng;
 
     public:
         Span();
